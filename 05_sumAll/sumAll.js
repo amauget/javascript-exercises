@@ -1,29 +1,28 @@
-const sumAll = function(numberOne, numberTwo){
+const sumAll = function(min, max){
     
-    
-    let array = [numberOne,numberTwo];
+    let sumArray = [min,max]
+    sumArray.sort();
+    //Orders array from lowest to highest value
 
-    let sortedArray = array.sort();
-    //Sorts array from lowest to highest to target in for loop.
+    const low = sumArray[0];
+    const high = sumArray[1]
     
-    let sum = 0;
-    if (sortedArray[0]< 0){
-        return "ERROR";
-    }
-    else if(typeof(sortedArray[1])==="string"){
-        //Elements sorted will put strings last. Thus the fixed position.
+    if ((!Number.isInteger(low)) || (!Number.isInteger(high) )){
+        // checks for non number entries
         return "ERROR"
     }
-    else if(sortedArray[1].length > 0){
-        return "ERROR";
-        //again, anything not a numbertype is sorted to the last slot. 
+    else if((low < 0) || (high < 0)){
+        return "ERROR"
     }
-    else{
-        for (i = sortedArray[0]; i <=sortedArray[1]; i++){
-            sum +=i;
-        }
-        return sum;
-        }
+    sum = 0;
+    for (i=low; i<=high; i++){
+        sum += i;
     }
+    return sum;
+
+    
+    
+    
+}    
 // Do not edit below this line
 module.exports = sumAll;
