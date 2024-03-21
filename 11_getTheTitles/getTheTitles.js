@@ -1,5 +1,7 @@
 const getTheTitles = function(books) {
     // You'll be given title and author of books. return array of titles
+    //ODIN SOLUTION: return array.map((book) => book.title);
+    //allows book.title key access without extracting from array.
 
     let book1 = books[0]; book2 = books[1];
     //extracts nested objects from array
